@@ -1,55 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    
-    <!-- Tailwind CSS for styling -->
+    <title>Almir Portfolio Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Apply the Inter font family to the body */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="style/style.css">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+<body class="bg-gray-900 text-white font-sans">
 
-    <!-- Main container to center content -->
-    <div class="min-h-screen flex items-center justify-center p-4">
-        
-        <!-- Card container for the content -->
-        <div class="w-full max-w-lg p-8 sm:p-12 bg-white dark:bg-gray-800 rounded-2xl shadow-lg text-center transform transition-all hover:scale-105">
-            
-            <!-- Icon: Rocket -->
-            <div class="mb-6">
-                <svg class="w-16 h-16 mx-auto text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            </div>
-
-            <!-- Main Heading -->
-            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Our New Website is Coming Soon
-            </h1>
-
-            <!-- Subheading / Message -->
-            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                We are currently building our new site. Stay tuned for something amazing!
-            </p>
-
-            <!-- Footer text -->
-            <div class="mt-10 text-sm text-gray-500 dark:text-gray-400">
-                Building in progress...
-            </div>
-
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Almir Portfolio</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-lg hover:text-cyan-400 transition duration-300">About</a>
+                <a href="#programming" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Programming</a>
+                <a href="#design" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Design</a>
+                <a href="#content" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Content Creation</a>
+                <a href="#projects" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Projects</a>
+                <a href="#contact" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Contact</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden block text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
         </div>
-    </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
+            <a href="#programming" class="block py-2 px-4 text-sm hover:bg-gray-700">Programming</a>
+            <a href="#design" class="block py-2 px-4 text-sm hover:bg-gray-700">Design</a>
+            <a href="#content" class="block py-2 px-4 text-sm hover:bg-gray-700">Content Creation</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
 
+    <main class="pt-16">
+        <section id="about" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-bold text-center mb-8">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-8">
+                    <p class="text-lg leading-relaxed">
+                        I am a passionate developer and designer with a knack for creating beautiful and functional applications. My expertise spans across web, desktop, and mobile platforms. I love bringing ideas to life and am always eager to learn new technologies.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <img src="images/Profile2.jpg" alt="My Image" class="rounded-lg shadow-lg">
+                    <p class="text-center mt-2 text-sm text-gray-400">Image dimensions: 500x500</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="programming" class="bg-gray-800 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8">Programming Skills</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-8">
+                        <p class="text-lg leading-relaxed mb-4">
+                            I have a strong foundation in both front-end and back-end development. I enjoy building robust and scalable applications.
+                        </p>
+                        <ul class="list-disc list-inside">
+                            <li><strong>Languages:</strong> JavaScript, Python</li>
+                            <li><strong>Frameworks:</strong> Django, PyQt6, React, Node.js</li>
+                            <li><strong>Stacks:</strong> MERN (MongoDB, Express, React, Node)</li>
+                            <li><strong>Styling:</strong> Tailwind CSS</li>
+                            <li><strong>Databases:</strong> MySQL, SQLite, MongoDB</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0">
+                        <img src="images/Programming.jpg" alt="Programming" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="design" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8">Design and Image</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mt-8 md:mt-0 md:order-2">
+                        <img src="images/Design.jpg" alt="Design" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="md:w-1/2 md:pr-8 md:order-1">
+                        <p class="text-lg leading-relaxed mb-4">
+                            I believe in the power of good design. I use a variety of tools to create visually appealing and user-friendly interfaces.
+                        </p>
+                        <ul class="list-disc list-inside">
+                            <li><strong>Adobe Suite:</strong> Photoshop, Illustrator</li>
+                            <li><strong>Digital Painting:</strong> Krita</li>
+                            <li><strong>UI/UX Design:</strong> Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="content" class="bg-gray-800 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8">Content Creation</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-8">
+                        <p class="text-lg leading-relaxed mb-4">
+                           I also have experience in creating engaging content for various platforms.
+                        </p>
+                        <ul class="list-disc list-inside">
+                            <li><strong>Graphic Design:</strong> Canva, Adobe Express</li>
+                            <li><strong>Video Editing:</strong> CapCut</li>
+                            <li><strong>Audio Editing:</strong> Audacity</li>
+                            <li><strong>AI Tools for Content Creation</strong></li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0">
+                        <img src="images/Content.jpg" alt="Content Creation" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
+                        <img src="images/Project-1-Full.jpg" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Full-Stack Django App</h3>
+                            <p class="text-gray-400 mb-4">A full-stack Django web application for managing POS devices, services, and client interactions. The system supports role-based logins (Client and Technician), 
+                                                            device installation tracking, yearly maintenance reminders, service requests, and shop management. 
+                                                            It features responsive frontend styling using Tailwind CSS and supports PDF generation, email notifications, and clean dashboards for both clients and technicians.</p>
+                            <a href="https://github.com/KadricAl/Django-Full-V1" class="inline-block bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
+                        <img src="images/Project-2.jpg" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Full-Stack Django App Lite</h3>
+                            <p class="text-gray-400 mb-4">A full-stack web application for managing POS device installations, yearly services, and support workflows. The frontend is built with React using Material UI and Axios, featuring:                                                                                  
+                                                            🔐 Role-based login (Technician / Client)
+                                                            🖥 Installed device dashboard with CRUD actions
+                                                            🛠 Service management with yearly maintenance reminders
+                                                            🔄 Responsive UI with real-time device details and service forms
+                                                        🔌 REST API integration powered by a Django backend
+                                                            Designed to help clients and technicians seamlessly track devices and service history.</p>
+                            <a href="https://github.com/KadricAl/Django-Full-Lite" class="inline-block bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
+                        <img src="images/Project-3-Full.jpg" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Django - React App</h3>
+                            <p class="text-gray-400 mb-4">A full-stack web application built with Django (backend) and React (frontend) for managing POS device installations and related services. The system allows technicians and clients to:
+                                                                Add, edit, and track installed devices with serial numbers and installation dates.
+                                                                Assign devices to customers.
+                                                                Log services (repairs or maintenance) for each installed device.
+                                                                Filter devices with a built-in search feature.
+                                                                Use role-based login (Technician/Client) with tailored dashboards.
+                                                                View and manage device/service details using modern UI with Material UI and Tailwind CSS.
+                                                                Perfect for businesses maintaining large device inventories and scheduled services.</p>
+                            <a href="https://github.com/KadricAl/Django-React-DeviceApp" class="inline-block bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-gray-800 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8">Contact Me</h2>
+                <div class="max-w-lg mx-auto">
+                    <p class="text-center mb-8">
+                    Have a project in mind? I'd love to hear from you.
+                    </p>
+                        <form id="contact-form" class="space-y-4">
+                            <input type="hidden" name="access_key" value="069cdc61-678f-4958-b946-814c4d59626b">
+
+                            <div>
+                                <label for="name" class="block text-sm font-medium">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-cyan-500 text-white py-2 rounded hover:bg-cyan-600 transition duration-300">Send Message</button>
+                        </form>
+                    <div id="form-result" class="mt-4 text-center"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+                <a href="https://github.com/KadricAl" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">YouTube</a>
+            </div>
+            <p class="text-gray-500">&copy; 2024 MyPortfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
 </body>
 </html>
