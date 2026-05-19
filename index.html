@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almir Portfolio Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Almir Portfolio</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-lg hover:text-cyan-400 transition duration-300">About</a>
+                <a href="#programming" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Programming</a>
+                <a href="#design" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Design</a>
+                <a href="#content" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Content Creation</a>
+                <a href="#projects" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Projects</a>
+                <a href="#services" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Services</a>
+                <a href="#contact" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Contact</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden block text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
+            <a href="#programming" class="block py-2 px-4 text-sm hover:bg-gray-700">Programming</a>
+            <a href="#design" class="block py-2 px-4 text-sm hover:bg-gray-700">Design</a>
+            <a href="#content" class="block py-2 px-4 text-sm hover:bg-gray-700">Content Creation</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
+            <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-700">Services</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <section id="about" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-bold text-center mb-8">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-8">
+                    <p class="text-lg leading-relaxed">
+                        I am a passionate developer and designer with a knack for creating beautiful and functional applications. My expertise spans across web, desktop, and mobile platforms. I love bringing ideas to life and am always eager to learn new technologies.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                    <img src="images/ProfileOne.jpg" alt="My Image" class="rounded-lg shadow-lg w-3/5">
+                </div>
+            </div>
+        </section>
+
+        <section id="programming" class="bg-gray-800 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8">Programming Skills</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-8">
+                        <p class="text-lg leading-relaxed mb-4">
+                            I build full-stack applications that are fast, scalable, and user-focused. 
+                            From designing intuitive interfaces to developing powerful back-end systems, I enjoy turning ideas into reliable digital products.
+                        </p>
+                        <ul class="list-disc list-inside">
+                            <li><strong>Languages:</strong> JavaScript, Python</li>
+                            <li><strong>Frameworks:</strong> Django, PyQt6, React, Node.js</li>
+                            <li><strong>Stacks:</strong> MERN (MongoDB, Express, React, Node)</li>
+                            <li><strong>Styling:</strong> Tailwind CSS</li>
+                            <li><strong>Databases:</strong> MySQL, SQLite, MongoDB</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                        <img src="images/Programming.jpg" alt="Programming" class="rounded-lg shadow-lg w-2/3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="design" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8">Design and Image</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mt-8 md:mt-0 md:order-2 flex justify-center">
+                        <img src="images/Design.jpg" alt="Design" class="rounded-lg shadow-lg w-2/3">
+                    </div>
+                    <div class="md:w-1/2 md:pr-8 md:order-1">
+                        <p class="text-lg leading-relaxed mb-4">
+                            I combine visual design with user experience principles to create modern, user-friendly interfaces. 
+                            My goal is to deliver designs that look great while remaining clear, consistent, and easy to navigate.
+                        </p>
+                        <ul class="list-disc list-inside">
+                            <li><strong>Adobe Suite:</strong> Photoshop, Illustrator</li>
+                            <li><strong>Digital Painting:</strong> Krita</li>
+                            <li><strong>UI/UX Design:</strong> Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="content" class="bg-gray-800 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8">Content Creation</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-8">
+                        <p class="text-lg leading-relaxed mb-4">
+                           I also have experience in creating engaging content for various platforms.
+                        </p>
+                        <ul class="list-disc list-inside">
+                            <li><strong>Graphic Design:</strong> Canva, Adobe Express</li>
+                            <li><strong>Video Editing:</strong> CapCut</li>
+                            <li><strong>Audio Editing:</strong> Audacity</li>
+                            <li><strong>AI Tools for Content Creation</strong></li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                        <img src="images/Content.jpg" alt="Content Creation" class="rounded-lg shadow-lg w-2/3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">
+                    <a href="projects.html" class="hover:text-cyan-400 transition duration-300 group">
+                        Featured Projects 
+                        <span class="inline-block transform group-hover:translate-x-2 transition-transform duration-300">→</span>
+                    </a>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 flex flex-col h-full">
+                        <div class="flex justify-center bg-gray-900/30 p-4">
+                            <img src="images/Project-1-Full.jpg" alt="Project 1" class="w-2/3 h-48 object-cover rounded shadow-md">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Full-Stack Django App</h3>
+                            <p class="text-gray-400 mb-6">
+                                A full-stack Django web application for managing POS devices, services, and client interactions. The system supports role-based logins (Client and Technician), 
+                                device installation tracking, yearly maintenance reminders, service requests, and shop management. 
+                                It features responsive frontend styling using Tailwind CSS and supports PDF generation, email notifications, and clean dashboards for both clients and technicians.
+                            </p>
+                            <div class="mt-auto flex justify-center">
+                            <a href="https://github.com/KadricAl/Django-Full-V1" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
+                                View on GitHub
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 flex flex-col h-full">
+                        <div class="flex justify-center bg-gray-900/30 p-4">
+                            <img src="images/Project-2.jpg" alt="Project 2" class="w-2/3 h-48 object-cover rounded shadow-md">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Full-Stack Django App Lite</h3>
+                            <p class="text-gray-400 mb-6">
+                                A full-stack web application for managing POS device installations. The frontend is built with React using Material UI and Axios, featuring:
+                                🔐 Role-based login, 🖥 Installed device dashboard, 🛠 Service management, and 🔌 REST API integration powered by a Django backend.
+                            </p>
+                            <div class="mt-auto flex justify-center">
+                            <a href="https://github.com/KadricAl/Django-Full-Lite" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
+                                View on GitHub
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 flex flex-col h-full">
+                        <div class="flex justify-center bg-gray-900/30 p-4">
+                            <img src="images/Project-3-Full.jpg" alt="Project 3" class="w-2/3 h-48 object-cover rounded shadow-md">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Django - React App</h3>
+                            <p class="text-gray-400 mb-6">
+                                A full-stack web application built with Django and React for managing POS device installations. 
+                                Technicians and clients can add, edit, and track devices, log services, and filter inventories with a built-in search feature. 
+                                Perfect for businesses maintaining large device inventories and scheduled services.
+                            </p>
+                            <div class="mt-auto flex justify-center">
+                            <a href="https://github.com/KadricAl/Django-React-DeviceApp" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
+                                View on GitHub
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="bg-gray-900 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">Hardware & Software Services</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300 group flex flex-col h-full">
+                        <div class="mb-6 overflow-hidden rounded-lg">
+                            <img src="images/RepairSm.jpg" alt="PC Repair" class="group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">PC & Laptop Repair</h3>
+                            <p class="text-gray-400 leading-relaxed">
+                                Professional diagnostics and repair for all major brands. From cracked screen replacements to advanced motherboard soldering.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm text-gray-500 mb-6">
+                                <li>• Hardware Diagnostics</li>
+                                <li>• Screen & Component Replacement</li>
+                                <li>• Internal Cleaning & Repasting</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto flex justify-center">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
+                            Visit site
+                        </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300 group flex flex-col h-full">
+                        <div class="mb-6 overflow-hidden rounded-lg">
+                            <img src="images/SalesSm.jpg" alt="Hardware Sales" class="group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Sales & Custom Builds</h3>
+                            <p class="text-gray-400 leading-relaxed">
+                                Refurbished business-class laptops and high-end custom PCs tailored for gaming, editing, or office work.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm text-gray-500 mb-6">
+                                <li>• Custom Gaming PC Builds</li>
+                                <li>• Refurbished Laptop Sales</li>
+                                <li>• Hardware Upgrades (RAM/SSD)</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto flex justify-center">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
+                            Visit site
+                        </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300 group flex flex-col h-full">
+                        <div class="mb-6 overflow-hidden rounded-lg">
+                            <img src="images/SoftwareSm.jpg" alt="Software Services" class="group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex-grow flex-col">
+                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Software & Optimization</h3>
+                            <p class="text-gray-400 leading-relaxed">
+                                I ensure your system runs at peak performance. Specialized in OS installations, virus removal, and data recovery.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm text-gray-500 mb-6">
+                                <li>• OS Installation (Windows/Linux)</li>
+                                <li>• Data Backup & Recovery</li>
+                                <li>• Malware & Virus Removal</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto flex justify-center">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
+                            Visit site
+                        </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-gray-800 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8">Contact Me</h2>
+                <div class="max-w-lg mx-auto">
+                    <p class="text-center mb-8">
+                    Have a project in mind? I'd love to hear from you.
+                    </p>
+                        <form id="contact-form" class="space-y-4">
+                            <input type="hidden" name="access_key" value="069cdc61-678f-4958-b946-814c4d59626b">
+
+                            <div>
+                                <label for="name" class="block text-sm font-medium">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-cyan-500 text-white py-2 rounded hover:bg-cyan-600 transition duration-300">Send Message</button>
+                        </form>
+                    <div id="form-result" class="mt-4 text-center"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+                <a href="https://github.com/KadricAl" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">YouTube</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
+            </div>
+            <p class="text-gray-500">&copy; 2024 MyPortfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+
+.nav-link.active {
+    color: #22d3ee; /* This is cyan-400 in Tailwind */
+    font-weight: bold;
+}
