@@ -3,187 +3,426 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almir Portfolio Website</title>
+    <title>Almir | Portfolio Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            viber: '#7360F2',
+                            whatsapp: '#25D366',
+                            dark: '#0B0F19',
+                            darker: '#070A10',
+                            accent: '#06B6D4',
+                            accentHover: '#0891b2',
+                            card: 'rgba(15, 23, 42, 0.45)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="style/style.css">
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-[#0B0F19] text-gray-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
 
-    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Almir Portfolio</h1>
+    <!-- HEADER / NAVIGATION -->
+    <header class="glass-nav fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tight text-white font-display">
+                Almir<span class="text-cyan-400">.</span><span class="text-xs text-gray-500 font-mono font-normal ml-1">DEV & TECH</span>
+            </h1>
             <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="nav-link text-lg hover:text-cyan-400 transition duration-300">About</a>
-                <a href="#programming" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Programming</a>
-                <a href="#design" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Design</a>
-                <a href="#content" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Content Creation</a>
-                <a href="#projects" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Projects</a>
-                <a href="#services" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Services</a>
-                <a href="#contact" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Contact</a>
+                <a href="#about" class="nav-link text-sm uppercase tracking-wider font-semibold">About</a>
+                <a href="#programming" class="nav-link text-sm uppercase tracking-wider font-semibold">Programming</a>
+                <a href="#design" class="nav-link text-sm uppercase tracking-wider font-semibold">Design</a>
+                <a href="#content" class="nav-link text-sm uppercase tracking-wider font-semibold">Content</a>
+                <a href="#projects" class="nav-link text-sm uppercase tracking-wider font-semibold">Projects</a>
+                <a href="#services" class="nav-link text-sm uppercase tracking-wider font-semibold">Services</a>
+                <a href="#contact" class="nav-link text-sm uppercase tracking-wider font-semibold">Contact</a>
             </nav>
-            <button id="menu-btn" class="md:hidden block text-white">
+            <button id="menu-btn" class="md:hidden block text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none" aria-label="Toggle Menu">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
-            <a href="#programming" class="block py-2 px-4 text-sm hover:bg-gray-700">Programming</a>
-            <a href="#design" class="block py-2 px-4 text-sm hover:bg-gray-700">Design</a>
-            <a href="#content" class="block py-2 px-4 text-sm hover:bg-gray-700">Content Creation</a>
-            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
-            <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-700">Services</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
+        <!-- MOBILE NAVIGATION -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#070A10]/95 border-b border-white/5 backdrop-blur-lg">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#about" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+                <a href="#programming" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Programming</a>
+                <a href="#design" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Design</a>
+                <a href="#content" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Content Creation</a>
+                <a href="#projects" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#services" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Services</a>
+                <a href="#contact" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
         </div>
     </header>
 
     <main class="pt-16">
-        <section id="about" class="container mx-auto px-4 py-16">
-            <h2 class="text-4xl font-bold text-center mb-8">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 md:pr-8">
-                    <p class="text-lg leading-relaxed">
-                        I am a passionate developer and designer with a knack for creating beautiful and functional applications. My expertise spans across web, desktop, and mobile platforms. I love bringing ideas to life and am always eager to learn new technologies.
+        
+        <!-- HERO / ABOUT SECTION -->
+        <section id="about" class="container mx-auto px-6 py-20 lg:py-32">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div class="lg:w-3/5 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-3 py-1 rounded-full text-xs font-semibold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span>Available for Projects & Tech Support</span>
+                    </div>
+                    
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 font-display leading-tight">
+                        Hi, I'm <span class="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent">Almir</span>
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        I am a passionate developer and designer with a knack for creating beautiful and functional applications. My expertise spans across web, desktop, and mobile platforms. I love bringing ideas to life and am always eager to learn new technologies. Whether you need custom full-stack solutions or advanced hardware repairs, I've got you covered.
                     </p>
-                </div>
-                <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-                    <img src="images/ProfileOne.jpg" alt="My Image" class="rounded-lg shadow-lg w-3/5">
-                </div>
-            </div>
-        </section>
+                    
+                    <!-- HERO CTA BLOCK -->
+                    <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 mb-8">
+                        <a href="#contact" class="px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-600 hover:to-sky-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 text-center flex items-center justify-center space-x-2">
+                            <span>Get In Touch</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        
+                        <!-- DYNAMIC WHATSAPP CTA -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold rounded-lg shadow-md hover:shadow-green-500/20 transition-all duration-300 text-center flex items-center justify-center space-x-2 pulse-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.949h.004c4.368 0 7.926-3.558 7.93-7.93a7.897 7.897 0 0 0-2.333-5.593l.002-.005zm-5.605 11.977c-1.166 0-2.309-.313-3.31-.906l-.237-.14-2.46.64.653-2.399-.153-.243a6.575 6.575 0 0 1-1.006-3.504c.004-3.597 2.934-6.527 6.537-6.527a6.545 6.545 0 0 1 4.628 1.916 6.547 6.547 0 0 1 1.921 4.629c-.004 3.598-2.934 6.528-6.539 6.528zM11.58 9.772c-.195-.097-1.15-.567-1.327-.63-.177-.063-.307-.095-.437.097-.13.195-.502.63-.614.757-.113.127-.225.143-.42.046-.195-.097-.822-.303-1.566-.967-.579-.516-.97-1.155-1.084-1.35-.114-.195-.012-.3-.11-.397-.087-.088-.195-.225-.293-.34-.097-.113-.13-.195-.195-.329-.066-.135-.033-.254-.017-.35.016-.097.13-.307.195-.42.065-.113.088-.195.13-.329.043-.135.022-.254-.01-.35-.033-.097-.13-.195-.195-.35-.13-.314-.29-.714-.396-.92-.105-.208-.225-.258-.337-.263-.105-.005-.225-.006-.345-.006a.65.65 0 0 0-.472.22c-.163.177-.62 0 .607-1.5 1.5 0 3.097 2.13 3.097a5.5 5.5 0 0 0 .524.234c.48.23 1.048.244 1.53.21.522-.037 1.053-.224 1.428-.515.375-.29.62-.647.62-1.077c.127-.063.262-.224.283-.43l-.004-.002z"/>
+                            </svg>
+                            <span>WhatsApp</span>
+                        </a>
 
-        <section id="programming" class="bg-gray-800 py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-8">Programming Skills</h2>
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 md:pr-8">
-                        <p class="text-lg leading-relaxed mb-4">
-                            I build full-stack applications that are fast, scalable, and user-focused. 
-                            From designing intuitive interfaces to developing powerful back-end systems, I enjoy turning ideas into reliable digital products.
-                        </p>
-                        <ul class="list-disc list-inside">
-                            <li><strong>Languages:</strong> JavaScript, Python</li>
-                            <li><strong>Frameworks:</strong> Django, PyQt6, React, Node.js</li>
-                            <li><strong>Stacks:</strong> MERN (MongoDB, Express, React, Node)</li>
-                            <li><strong>Styling:</strong> Tailwind CSS</li>
-                            <li><strong>Databases:</strong> MySQL, SQLite, MongoDB</li>
-                        </ul>
-                    </div>
-                    <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-                        <img src="images/Programming.jpg" alt="Programming" class="rounded-lg shadow-lg w-2/3">
+                        <!-- DYNAMIC VIBER CTA -->
+                        <a href="#" class="viber-btn px-6 py-3.5 bg-[#7360F2] hover:bg-[#5f4de0] text-white font-semibold rounded-lg shadow-md hover:shadow-indigo-500/20 transition-all duration-300 text-center flex items-center justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.34 16.5c-.88-.41-2.14-1.06-2.58-1.53a1.59 1.59 0 0 0-1.87-.27c-.42.22-.84.44-1.26.66a9.55 9.55 0 0 1-4.75-4.75c.22-.42.44-.84.66-1.26a1.59 1.59 0 0 0-.27-1.87c-.47-.44-1.12-1.7-1.53-2.58a1.56 1.56 0 0 0-2-.88 6.94 6.94 0 0 0-4.06 4.06c-.84 3.73.54 8.5 4.3 12.26s8.53 5.14 12.26 4.3a6.94 6.94 0 0 0 4.06-4.06 1.56 1.56 0 0 0-.88-2zM12 2a1 1 0 0 1 1 1 7 7 0 0 1 7 7 1 1 0 0 1-2 0 5 5 0 0 0-5-5 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1 1 3 3 0 0 1 3 3 1 1 0 0 1-2 0 1 1 0 0 0-1-1 1 1 0 0 1-1-1z"/>
+                            </svg>
+                            <span>Viber</span>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="design" class="py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-8">Design and Image</h2>
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 mt-8 md:mt-0 md:order-2 flex justify-center">
-                        <img src="images/Design.jpg" alt="Design" class="rounded-lg shadow-lg w-2/3">
-                    </div>
-                    <div class="md:w-1/2 md:pr-8 md:order-1">
-                        <p class="text-lg leading-relaxed mb-4">
-                            I combine visual design with user experience principles to create modern, user-friendly interfaces. 
-                            My goal is to deliver designs that look great while remaining clear, consistent, and easy to navigate.
-                        </p>
-                        <ul class="list-disc list-inside">
-                            <li><strong>Adobe Suite:</strong> Photoshop, Illustrator</li>
-                            <li><strong>Digital Painting:</strong> Krita</li>
-                            <li><strong>UI/UX Design:</strong> Figma</li>
-                        </ul>
+                
+                <!-- HERO PROFILE PIC -->
+                <div class="lg:w-2/5 flex justify-center relative">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 group">
+                        <!-- Neon ambient glow behind profile -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="absolute inset-0 bg-[#0B0F19] rounded-2xl"></div>
+                        <img src="images/ProfileOne.jpg" alt="Almir Kadrić Profile" class="relative rounded-2xl shadow-2xl object-cover w-full h-full border border-white/10 group-hover:scale-[1.02] transition-transform duration-500 ease-out">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="content" class="bg-gray-800 py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-8">Content Creation</h2>
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 md:pr-8">
-                        <p class="text-lg leading-relaxed mb-4">
-                           I also have experience in creating engaging content for various platforms.
-                        </p>
-                        <ul class="list-disc list-inside">
-                            <li><strong>Graphic Design:</strong> Canva, Adobe Express</li>
-                            <li><strong>Video Editing:</strong> CapCut</li>
-                            <li><strong>Audio Editing:</strong> Audacity</li>
-                            <li><strong>AI Tools for Content Creation</strong></li>
-                        </ul>
+        <!-- PROGRAMMING SKILLS -->
+        <section id="programming" class="section-bg-programming py-24 border-y border-white/5 relative bg-[#070A10]/20">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto md:mx-0 md:max-w-2xl lg:max-w-3xl">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-6 font-display">
+                        Programming Skills
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-10 leading-relaxed">
+                        I build full-stack applications that are fast, scalable, and user-focused. 
+                        From designing intuitive interfaces to developing powerful back-end systems, I enjoy turning ideas into reliable digital products.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider text-cyan-400 mb-3">Languages & Core</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                    <span>JavaScript</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                    <span>Python</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider text-cyan-400 mb-3">Frameworks & Libraries</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                                    <span>Django</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                    <span>React</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                                    <span>Node.js</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                    <span>PyQt6</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider text-cyan-400 mb-3">Architecture & Databases</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <span>MERN Stack</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                    <span>Tailwind CSS</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                    <span>MySQL</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+                                    <span>SQLite</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                    <span>MongoDB</span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-                        <img src="images/Content.jpg" alt="Content Creation" class="rounded-lg shadow-lg w-2/3">
+                    
+                    <!-- PROGRAMMING SECTION CTA -->
+                    <div class="flex flex-wrap gap-4 mt-10">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-programming-btn px-6 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-green-500/20 transition-all duration-300 flex items-center space-x-2 pulse-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.949h.004c4.368 0 7.926-3.558 7.93-7.93a7.897 7.897 0 0 0-2.333-5.593l.002-.005zm-5.605 11.977c-1.166 0-2.309-.313-3.31-.906l-.237-.14-2.46.64.653-2.399-.153-.243a6.575 6.575 0 0 1-1.006-3.504c.004-3.597 2.934-6.527 6.537-6.527a6.545 6.545 0 0 1 4.628 1.916 6.547 6.547 0 0 1 1.921 4.629c-.004 3.598-2.934 6.528-6.539 6.528zM11.58 9.772c-.195-.097-1.15-.567-1.327-.63-.177-.063-.307-.095-.437.097-.13.195-.502.63-.614.757-.113.127-.225.143-.42.046-.195-.097-.822-.303-1.566-.967-.579-.516-.97-1.155-1.084-1.35-.114-.195-.012-.3-.11-.397-.087-.088-.195-.225-.293-.34-.097-.113-.13-.195-.195-.329-.066-.135-.033-.254-.017-.35.016-.097.13-.307.195-.42.065-.113.088-.195.13-.329.043-.135.022-.254-.01-.35-.033-.097-.13-.195-.195-.35-.13-.314-.29-.714-.396-.92-.105-.208-.225-.258-.337-.263-.105-.005-.225-.006-.345-.006a.65.65 0 0 0-.472.22c-.163.177-.62 0 .607-1.5 1.5 0 3.097 2.13 3.097a5.5 5.5 0 0 0 .524.234c.48.23 1.048.244 1.53.21.522-.037 1.053-.224 1.428-.515.375-.29.62-.647.62-1.077c.127-.063.262-.224.283-.43l-.004-.002z"/></svg>
+                            <span>Discuss Programming</span>
+                        </a>
+                        <a href="#" class="viber-btn px-6 py-3 bg-[#7360F2] hover:bg-[#5f4de0] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-indigo-500/20 transition-all duration-300 flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19.34 16.5c-.88-.41-2.14-1.06-2.58-1.53a1.59 1.59 0 0 0-1.87-.27c-.42.22-.84.44-1.26.66a9.55 9.55 0 0 1-4.75-4.75c.22-.42.44-.84.66-1.26a1.59 1.59 0 0 0-.27-1.87c-.47-.44-1.12-1.7-1.53-2.58a1.56 1.56 0 0 0-2-.88 6.94 6.94 0 0 0-4.06 4.06c-.84 3.73.54 8.5 4.3 12.26s8.53 5.14 12.26 4.3a6.94 6.94 0 0 0 4.06-4.06 1.56 1.56 0 0 0-.88-2zM12 2a1 1 0 0 1 1 1 7 7 0 0 1 7 7 1 1 0 0 1-2 0 5 5 0 0 0-5-5 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1 1 3 3 0 0 1 3 3 1 1 0 0 1-2 0 1 1 0 0 0-1-1 1 1 0 0 1-1-1z"/></svg>
+                            <span>Message on Viber</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">
-                    <a href="projects.html" class="hover:text-cyan-400 transition duration-300 group">
-                        Featured Projects 
-                        <span class="inline-block transform group-hover:translate-x-2 transition-transform duration-300">→</span>
-                    </a>
-                </h2>
+        <!-- DESIGN AND IMAGE -->
+        <section id="design" class="section-bg-design py-24 relative">
+            <div class="container mx-auto px-6 relative z-10 flex justify-end">
+                <div class="w-full max-w-4xl md:max-w-2xl lg:max-w-3xl text-left md:text-right">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-6 font-display">
+                        Design and Image
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-10 leading-relaxed md:ml-auto max-w-xl">
+                        I combine visual design with user experience principles to create modern, user-friendly interfaces. 
+                        My goal is to deliver designs that look great while remaining clear, consistent, and easy to navigate.
+                    </p>
+                    
+                    <div class="space-y-8 flex flex-col md:items-end">
+                        <div>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider text-cyan-400 mb-3 md:text-right">Creative Tools</h4>
+                            <div class="flex flex-wrap md:justify-end gap-2">
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+                                    <span>Photoshop</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                                    <span>Illustrator</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                                    <span>Krita Painting</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider text-cyan-400 mb-3 md:text-right">Interface UX</h4>
+                            <div class="flex flex-wrap md:justify-end gap-2">
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                                    <span>Figma Prototyping</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                    <span>UI/UX Architecture</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- DESIGN SECTION CTA -->
+                    <div class="flex flex-wrap md:justify-end gap-4 mt-10">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-design-btn px-6 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-green-500/20 transition-all duration-300 flex items-center space-x-2 pulse-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.949h.004c4.368 0 7.926-3.558 7.93-7.93a7.897 7.897 0 0 0-2.333-5.593l.002-.005zm-5.605 11.977c-1.166 0-2.309-.313-3.31-.906l-.237-.14-2.46.64.653-2.399-.153-.243a6.575 6.575 0 0 1-1.006-3.504c.004-3.597 2.934-6.527 6.537-6.527a6.545 6.545 0 0 1 4.628 1.916 6.547 6.547 0 0 1 1.921 4.629c-.004 3.598-2.934 6.528-6.539 6.528zM11.58 9.772c-.195-.097-1.15-.567-1.327-.63-.177-.063-.307-.095-.437.097-.13.195-.502.63-.614.757-.113.127-.225.143-.42.046-.195-.097-.822-.303-1.566-.967-.579-.516-.97-1.155-1.084-1.35-.114-.195-.012-.3-.11-.397-.087-.088-.195-.225-.293-.34-.097-.113-.13-.195-.195-.329-.066-.135-.033-.254-.017-.35.016-.097.13-.307.195-.42.065-.113.088-.195.13-.329.043-.135.022-.254-.01-.35-.033-.097-.13-.195-.195-.35-.13-.314-.29-.714-.396-.92-.105-.208-.225-.258-.337-.263-.105-.005-.225-.006-.345-.006a.65.65 0 0 0-.472.22c-.163.177-.62 0 .607-1.5 1.5 0 3.097 2.13 3.097a5.5 5.5 0 0 0 .524.234c.48.23 1.048.244 1.53.21.522-.037 1.053-.224 1.428-.515.375-.29.62-.647.62-1.077c.127-.063.262-.224.283-.43l-.004-.002z"/></svg>
+                            <span>Request Design Quote</span>
+                        </a>
+                        <a href="#" class="viber-btn px-6 py-3 bg-[#7360F2] hover:bg-[#5f4de0] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-indigo-500/20 transition-all duration-300 flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19.34 16.5c-.88-.41-2.14-1.06-2.58-1.53a1.59 1.59 0 0 0-1.87-.27c-.42.22-.84.44-1.26.66a9.55 9.55 0 0 1-4.75-4.75c.22-.42.44-.84.66-1.26a1.59 1.59 0 0 0-.27-1.87c-.47-.44-1.12-1.7-1.53-2.58a1.56 1.56 0 0 0-2-.88 6.94 6.94 0 0 0-4.06 4.06c-.84 3.73.54 8.5 4.3 12.26s8.53 5.14 12.26 4.3a6.94 6.94 0 0 0 4.06-4.06 1.56 1.56 0 0 0-.88-2zM12 2a1 1 0 0 1 1 1 7 7 0 0 1 7 7 1 1 0 0 1-2 0 5 5 0 0 0-5-5 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1 1 3 3 0 0 1 3 3 1 1 0 0 1-2 0 1 1 0 0 0-1-1 1 1 0 0 1-1-1z"/></svg>
+                            <span>Message on Viber</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT CREATION -->
+        <section id="content" class="section-bg-content py-24 border-y border-white/5 relative bg-[#070A10]/20">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto md:mx-0 md:max-w-2xl lg:max-w-3xl">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-6 font-display">
+                        Content Creation
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-10 leading-relaxed">
+                        I have extensive experience crafting engaging visual, audio, and video content customized for various online platforms, combining structural composition with modern AI tools.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-sm font-semibold uppercase tracking-wider text-cyan-400 mb-3">Tools & Systems</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                    <span>Canva Graphics</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                                    <span>Adobe Express</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                    <span>CapCut Video Editing</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                                    <span>Audacity Audio</span>
+                                </span>
+                                <span class="skill-chip px-4 py-2 rounded-lg text-sm text-gray-300 font-medium flex items-center space-x-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+                                    <span>AI Content Generation</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CONTENT CREATION CTA -->
+                    <div class="flex flex-wrap gap-4 mt-10">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-content-btn px-6 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-green-500/20 transition-all duration-300 flex items-center space-x-2 pulse-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.949h.004c4.368 0 7.926-3.558 7.93-7.93a7.897 7.897 0 0 0-2.333-5.593l.002-.005zm-5.605 11.977c-1.166 0-2.309-.313-3.31-.906l-.237-.14-2.46.64.653-2.399-.153-.243a6.575 6.575 0 0 1-1.006-3.504c.004-3.597 2.934-6.527 6.537-6.527a6.545 6.545 0 0 1 4.628 1.916 6.547 6.547 0 0 1 1.921 4.629c-.004 3.598-2.934 6.528-6.539 6.528zM11.58 9.772c-.195-.097-1.15-.567-1.327-.63-.177-.063-.307-.095-.437.097-.13.195-.502.63-.614.757-.113.127-.225.143-.42.046-.195-.097-.822-.303-1.566-.967-.579-.516-.97-1.155-1.084-1.35-.114-.195-.012-.3-.11-.397-.087-.088-.195-.225-.293-.34-.097-.113-.13-.195-.195-.329-.066-.135-.033-.254-.017-.35.016-.097.13-.307.195-.42.065-.113.088-.195.13-.329.043-.135.022-.254-.01-.35-.033-.097-.13-.195-.195-.35-.13-.314-.29-.714-.396-.92-.105-.208-.225-.258-.337-.263-.105-.005-.225-.006-.345-.006a.65.65 0 0 0-.472.22c-.163.177-.62 0 .607-1.5 1.5 0 3.097 2.13 3.097a5.5 5.5 0 0 0 .524.234c.48.23 1.048.244 1.53.21.522-.037 1.053-.224 1.428-.515.375-.29.62-.647.62-1.077c.127-.063.262-.224.283-.43l-.004-.002z"/></svg>
+                            <span>Discuss Content Project</span>
+                        </a>
+                        <a href="#" class="viber-btn px-6 py-3 bg-[#7360F2] hover:bg-[#5f4de0] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-indigo-500/20 transition-all duration-300 flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19.34 16.5c-.88-.41-2.14-1.06-2.58-1.53a1.59 1.59 0 0 0-1.87-.27c-.42.22-.84.44-1.26.66a9.55 9.55 0 0 1-4.75-4.75c.22-.42.44-.84.66-1.26a1.59 1.59 0 0 0-.27-1.87c-.47-.44-1.12-1.7-1.53-2.58a1.56 1.56 0 0 0-2-.88 6.94 6.94 0 0 0-4.06 4.06c-.84 3.73.54 8.5 4.3 12.26s8.53 5.14 12.26 4.3a6.94 6.94 0 0 0 4.06-4.06 1.56 1.56 0 0 0-.88-2zM12 2a1 1 0 0 1 1 1 7 7 0 0 1 7 7 1 1 0 0 1-2 0 5 5 0 0 0-5-5 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1 1 3 3 0 0 1 3 3 1 1 0 0 1-2 0 1 1 0 0 0-1-1 1 1 0 0 1-1-1z"/></svg>
+                            <span>Message on Viber</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section id="projects" class="py-24 bg-[#0B0F19]">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-16 gap-4">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2 font-display">
+                            Featured Projects
+                        </h2>
+                        <p class="text-gray-400">Some of my recent software and application architectures.</p>
+                    </div>
+                    <div>
+                        <a href="projects.html" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-bold group transition duration-300">
+                            <span>Browse All Projects</span>
+                            <span class="transform group-hover:translate-x-2 transition-transform duration-300 ml-2">→</span>
+                        </a>
+                    </div>
+                </div>
+                
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 flex flex-col h-full">
-                        <div class="flex justify-center bg-gray-900/30 p-4">
-                            <img src="images/Project-1-Full.jpg" alt="Project 1" class="w-2/3 h-48 object-cover rounded shadow-md">
+                    <!-- PROJECT 1 -->
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full group">
+                        <div class="relative bg-slate-950/40 p-6 flex justify-center items-center overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <img src="images/Project-1-Full.jpg" alt="Django POS Device management App" class="w-11/12 h-44 object-cover rounded-lg shadow-md group-hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Full-Stack Django App</h3>
-                            <p class="text-gray-400 mb-6">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 font-semibold">Web Application</span>
+                            <h3 class="text-2xl font-bold mb-4 text-white font-display group-hover:text-cyan-300 transition-colors">Full-Stack Django App</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed flex-grow">
                                 A full-stack Django web application for managing POS devices, services, and client interactions. The system supports role-based logins (Client and Technician), 
-                                device installation tracking, yearly maintenance reminders, service requests, and shop management. 
-                                It features responsive frontend styling using Tailwind CSS and supports PDF generation, email notifications, and clean dashboards for both clients and technicians.
+                                device installation tracking, yearly maintenance reminders, service requests, and shop management.
                             </p>
-                            <div class="mt-auto flex justify-center">
-                            <a href="https://github.com/KadricAl/Django-Full-V1" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
-                                View on GitHub
-                            </a>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">Django</span>
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">Python</span>
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">MySQL</span>
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">Tailwind CSS</span>
                             </div>
+                            <a href="https://github.com/KadricAl/Django-Full-V1" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 hover:bg-slate-900 border border-white/5 hover:border-cyan-500/30 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-center flex items-center justify-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                <span>Code Archive</span>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 flex flex-col h-full">
-                        <div class="flex justify-center bg-gray-900/30 p-4">
-                            <img src="images/Project-2.jpg" alt="Project 2" class="w-2/3 h-48 object-cover rounded shadow-md">
+                    <!-- PROJECT 2 -->
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full group">
+                        <div class="relative bg-slate-950/40 p-6 flex justify-center items-center overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <img src="images/Project-2.jpg" alt="Django Full Lite version" class="w-11/12 h-44 object-cover rounded-lg shadow-md group-hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Full-Stack Django App Lite</h3>
-                            <p class="text-gray-400 mb-6">
-                                A full-stack web application for managing POS device installations. The frontend is built with React using Material UI and Axios, featuring:
-                                🔐 Role-based login, 🖥 Installed device dashboard, 🛠 Service management, and 🔌 REST API integration powered by a Django backend.
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 font-semibold">Web Application API</span>
+                            <h3 class="text-2xl font-bold mb-4 text-white font-display group-hover:text-cyan-300 transition-colors">Full-Stack Django Lite</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed flex-grow">
+                                A full-stack web application for managing POS device installations. The frontend is built with React using Material UI and Axios, featuring: role-based login, service trackers, and Rest API Django backend.
                             </p>
-                            <div class="mt-auto flex justify-center">
-                            <a href="https://github.com/KadricAl/Django-Full-Lite" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
-                                View on GitHub
-                            </a>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">Python</span>
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">Django REST</span>
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">React</span>
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">SQLite</span>
                             </div>
+                            <a href="https://github.com/KadricAl/Django-Full-Lite" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 hover:bg-slate-900 border border-white/5 hover:border-cyan-500/30 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-center flex items-center justify-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                <span>Code Archive</span>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 flex flex-col h-full">
-                        <div class="flex justify-center bg-gray-900/30 p-4">
-                            <img src="images/Project-3-Full.jpg" alt="Project 3" class="w-2/3 h-48 object-cover rounded shadow-md">
+                    <!-- PROJECT 3 -->
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full group">
+                        <div class="relative bg-slate-950/40 p-6 flex justify-center items-center overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <img src="images/Project-3-Full.jpg" alt="Django - React App Interface" class="w-11/12 h-44 object-cover rounded-lg shadow-md group-hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Django - React App</h3>
-                            <p class="text-gray-400 mb-6">
-                                A full-stack web application built with Django and React for managing POS device installations. 
-                                Technicians and clients can add, edit, and track devices, log services, and filter inventories with a built-in search feature. 
-                                Perfect for businesses maintaining large device inventories and scheduled services.
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 font-semibold">Full Stack Architecture</span>
+                            <h3 class="text-2xl font-bold mb-4 text-white font-display group-hover:text-cyan-300 transition-colors">Django - React App</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed flex-grow">
+                                A full-stack web application built with Django and React for managing POS device installations. Technicians and clients can easily add, edit, and track service statuses.
                             </p>
-                            <div class="mt-auto flex justify-center">
-                            <a href="https://github.com/KadricAl/Django-React-DeviceApp" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
-                                View on GitHub
-                            </a>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">React</span>
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">Django API</span>
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">Material UI</span>
+                                <span class="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-400">SQLite</span>
                             </div>
+                            <a href="https://github.com/KadricAl/Django-React-DeviceApp" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950 hover:bg-slate-900 border border-white/5 hover:border-cyan-500/30 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-center flex items-center justify-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                <span>Code Archive</span>
+                            </a>
                         </div>
                     </div>
 
@@ -191,75 +430,119 @@
             </div>
         </section>
 
-        <section id="services" class="bg-gray-900 py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Hardware & Software Services</h2>
+        <!-- SERVICES -->
+        <section id="services" class="bg-[#070A10] py-24 border-y border-white/5">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4 font-display">
+                        Hardware & Software Services
+                    </h2>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Offering fast, professional, and reliable services for computers and systems. Need assistance? Get in touch immediately!
+                    </p>
+                </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
-                    <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300 group flex flex-col h-full">
-                        <div class="mb-6 overflow-hidden rounded-lg">
-                            <img src="images/RepairSm.jpg" alt="PC Repair" class="group-hover:scale-110 transition-transform duration-500">
+                    <!-- SERVICE 1 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col h-full border border-white/5 hover:border-cyan-500/30 transition-all duration-300">
+                        <div class="mb-6 overflow-hidden rounded-xl bg-slate-950/40 relative aspect-video flex items-center justify-center">
+                            <img src="images/RepairSm.jpg" alt="Laptop Board Diagnostics Repair" class="object-cover w-full h-full hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="flex-grow">
-                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">PC & Laptop Repair</h3>
-                            <p class="text-gray-400 leading-relaxed">
-                                Professional diagnostics and repair for all major brands. From cracked screen replacements to advanced motherboard soldering.
+                        <div class="flex-grow flex flex-col">
+                            <h3 class="text-2xl font-bold mb-4 text-white font-display">PC & Laptop Repair</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                Professional diagnostics and hardware micro-repairs. Fast replacement of screens, key components, and internal thermal servicing to prevent throttling.
                             </p>
-                            <ul class="mt-4 space-y-2 text-sm text-gray-500 mb-6">
-                                <li>• Hardware Diagnostics</li>
-                                <li>• Screen & Component Replacement</li>
-                                <li>• Internal Cleaning & Repasting</li>
+                            <ul class="space-y-2.5 text-xs text-gray-500 mb-8 mt-auto">
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-cyan-400 font-bold">&#10003;</span>
+                                    <span>Full Hardware Diagnostics</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-cyan-400 font-bold">&#10003;</span>
+                                    <span>Screen & Chip Soldering</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-cyan-400 font-bold">&#10003;</span>
+                                    <span>Thermal Repasting & Clean</span>
+                                </li>
                             </ul>
                         </div>
-                        <div class="mt-auto flex justify-center">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
-                            Visit site
-                        </a>
+                        <!-- SERVICE 1 LINK TO AKTECH -->
+                        <div class="mt-auto pt-4">
+                            <a href="https://aktech.work#repair" target="_blank" rel="noopener noreferrer" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2.5 px-4 rounded-lg transition duration-200 text-center text-sm flex items-center justify-center space-x-2 shadow-md hover:shadow-cyan-500/20">
+                                <span>Visit Site</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300 group flex flex-col h-full">
-                        <div class="mb-6 overflow-hidden rounded-lg">
-                            <img src="images/SalesSm.jpg" alt="Hardware Sales" class="group-hover:scale-110 transition-transform duration-500">
+                    <!-- SERVICE 2 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col h-full border border-white/5 hover:border-cyan-500/30 transition-all duration-300">
+                        <div class="mb-6 overflow-hidden rounded-xl bg-slate-950/40 relative aspect-video flex items-center justify-center">
+                            <img src="images/SalesSm.jpg" alt="Gaming Custom PC building parts" class="object-cover w-full h-full hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="flex-grow">
-                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Sales & Custom Builds</h3>
-                            <p class="text-gray-400 leading-relaxed">
-                                Refurbished business-class laptops and high-end custom PCs tailored for gaming, editing, or office work.
+                        <div class="flex-grow flex flex-col">
+                            <h3 class="text-2xl font-bold mb-4 text-white font-display">Sales & Custom Builds</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                Assembly of high-performance computers customized for rendering, intensive 3D design, editing, and gaming. Procurement of reliable workstation laptops.
                             </p>
-                            <ul class="mt-4 space-y-2 text-sm text-gray-500 mb-6">
-                                <li>• Custom Gaming PC Builds</li>
-                                <li>• Refurbished Laptop Sales</li>
-                                <li>• Hardware Upgrades (RAM/SSD)</li>
+                            <ul class="space-y-2.5 text-xs text-gray-500 mb-8 mt-auto">
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-cyan-400 font-bold">&#10003;</span>
+                                    <span>High-End Custom Gaming Rigs</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-cyan-400 font-bold">&#10003;</span>
+                                    <span>Workstation Laptops Sales</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-cyan-400 font-bold">&#10003;</span>
+                                    <span>Hardware Upgrades (RAM/SSD)</span>
+                                </li>
                             </ul>
                         </div>
-                        <div class="mt-auto flex justify-center">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
-                            Visit site
-                        </a>
+                        <!-- SERVICE 2 LINK TO AKTECH -->
+                        <div class="mt-auto pt-4">
+                            <a href="https://aktech.work#sales" target="_blank" rel="noopener noreferrer" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2.5 px-4 rounded-lg transition duration-200 text-center text-sm flex items-center justify-center space-x-2 shadow-md hover:shadow-cyan-500/20">
+                                <span>Visit Site</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300 group flex flex-col h-full">
-                        <div class="mb-6 overflow-hidden rounded-lg">
-                            <img src="images/SoftwareSm.jpg" alt="Software Services" class="group-hover:scale-110 transition-transform duration-500">
+                    <!-- SERVICE 3 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col h-full border border-white/5 hover:border-cyan-500/30 transition-all duration-300">
+                        <div class="mb-6 overflow-hidden rounded-xl bg-slate-950/40 relative aspect-video flex items-center justify-center">
+                            <img src="images/SoftwareSm.jpg" alt="Computer BIOS software programming setup" class="object-cover w-full h-full hover:scale-105 transition-transform duration-500">
                         </div>
-                        <div class="flex-grow flex-col">
-                            <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Software & Optimization</h3>
-                            <p class="text-gray-400 leading-relaxed">
-                                I ensure your system runs at peak performance. Specialized in OS installations, virus removal, and data recovery.
+                        <div class="flex-grow flex flex-col">
+                            <h3 class="text-2xl font-bold mb-4 text-white font-display">Software & Optimization</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                Specialized services in operational system installation, virus extraction, device drivers configuration, and lost data recovery. Peak optimization for old machines.
                             </p>
-                            <ul class="mt-4 space-y-2 text-sm text-gray-500 mb-6">
-                                <li>• OS Installation (Windows/Linux)</li>
-                                <li>• Data Backup & Recovery</li>
-                                <li>• Malware & Virus Removal</li>
+                            <ul class="space-y-2.5 text-xs text-gray-500 mb-8 mt-auto">
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-cyan-400 font-bold">&#10003;</span>
+                                    <span>OS Install (Windows/Linux)</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-cyan-400 font-bold">&#10003;</span>
+                                    <span>Full Malware & Virus Extraction</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-cyan-400 font-bold">&#10003;</span>
+                                    <span>Secure Data Backup & Recovery</span>
+                                </li>
                             </ul>
                         </div>
-                        <div class="mt-auto flex justify-center">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-2/3 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 transition duration-300 text-center">
-                            Visit site
-                        </a>
+                        <!-- SERVICE 3 LINK TO AKTECH -->
+                        <div class="mt-auto pt-4">
+                            <a href="https://aktech.work#software" target="_blank" rel="noopener noreferrer" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2.5 px-4 rounded-lg transition duration-200 text-center text-sm flex items-center justify-center space-x-2 shadow-md hover:shadow-cyan-500/20">
+                                <span>Visit Site</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
                         </div>
                     </div>
 
@@ -267,48 +550,138 @@
             </div>
         </section>
 
-        <section id="contact" class="bg-gray-800 py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-8">Contact Me</h2>
-                <div class="max-w-lg mx-auto">
-                    <p class="text-center mb-8">
-                    Have a project in mind? I'd love to hear from you.
-                    </p>
-                        <form id="contact-form" class="space-y-4">
+        <!-- CONTACT ME -->
+        <section id="contact" class="bg-[#0B0F19] py-24 relative overflow-hidden">
+            <div class="absolute w-96 h-96 rounded-full bg-cyan-500/5 -bottom-20 -left-20 blur-3xl z-0"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-2xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4 font-display">
+                            Contact Me
+                        </h2>
+                        <p class="text-gray-400">
+                            Have an exciting project, a hardware diagnostics problem, or a question? I'd love to hear from you.
+                        </p>
+                    </div>
+                    
+                    <div class="glass-card p-8 sm:p-10 rounded-2xl shadow-2xl border border-white/5 relative">
+                        <form id="contact-form" class="space-y-6">
                             <input type="hidden" name="access_key" value="069cdc61-678f-4958-b946-814c4d59626b">
 
                             <div>
-                                <label for="name" class="block text-sm font-medium">Name</label>
-                                <input type="text" id="name" name="name" required class="w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                <label for="name" class="block text-sm font-semibold tracking-wide text-gray-300">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full mt-1.5 p-3.5 bg-slate-950/60 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300" placeholder="John Doe">
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium">Email</label>
-                                <input type="email" id="email" name="email" required class="w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                <label for="email" class="block text-sm font-semibold tracking-wide text-gray-300">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full mt-1.5 p-3.5 bg-slate-950/60 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300" placeholder="john@example.com">
                             </div>
                             <div>
-                                <label for="message" class="block text-sm font-medium">Message</label>
-                                <textarea id="message" name="message" rows="4" required class="w-full mt-1 p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                                <label for="message" class="block text-sm font-semibold tracking-wide text-gray-300">Your Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full mt-1.5 p-3.5 bg-slate-950/60 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300" placeholder="Hello, I would like to inquire about..."></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-cyan-500 text-white py-2 rounded hover:bg-cyan-600 transition duration-300">Send Message</button>
+                            
+                            <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-600 hover:to-sky-600 text-white font-bold py-3.5 rounded-lg shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 flex items-center justify-center space-x-2">
+                                <span>Send Message</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                                </svg>
+                            </button>
                         </form>
-                    <div id="form-result" class="mt-4 text-center"></div>
+                        <div id="form-result" class="mt-6 text-center font-semibold text-sm transition-all duration-300"></div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
-                <a href="https://github.com/KadricAl" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">YouTube</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
+    <!-- FOOTER -->
+    <footer class="bg-[#070A10] border-t border-white/5 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="linkedin-btn text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/KadricAl" class="github-btn text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="#" class="youtube-btn text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="#" class="instagram-btn text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
-            <p class="text-gray-500">&copy; 2024 MyPortfolio by AK Tech. All Rights Reserved.</p>
+            <p class="text-gray-500 text-xs sm:text-sm font-medium tracking-wide">&copy; 2024 MyPortfolio by AK Tech. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- STICKY FLOATING QUICK CTA WIDGET -->
+    <div id="cta-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Expanded Quick Communication Card -->
+        <div id="cta-menu" class="hidden glass-card rounded-2xl p-4 mb-4 w-64 shadow-2xl fab-expanded-shadow border border-white/10 transition-all duration-300 transform translate-y-2 opacity-0">
+            <div class="flex justify-between items-center mb-3 pb-2 border-b border-white/5">
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Quick Connect</span>
+                <button id="cta-close" class="text-gray-400 hover:text-white transition-colors" aria-label="Close widget">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></button>
+            </div>
+            
+            <div class="space-y-2">
+                <!-- CALL ME -->
+                <a href="#" class="call-btn flex items-center space-x-3 p-2.5 rounded-lg bg-white/5 hover:bg-cyan-500/10 border border-white/5 hover:border-cyan-500/20 text-gray-300 hover:text-white transition-all duration-200">
+                    <div class="w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold leading-none">Call Direct</p>
+                        <span class="text-[10px] text-gray-500">Available 8 AM - 6 PM</span>
+                    </div>
+                </a>
+
+                <!-- WHATSAPP -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn flex items-center space-x-3 p-2.5 rounded-lg bg-white/5 hover:bg-[#25D366]/10 border border-white/5 hover:border-[#25D366]/20 text-gray-300 hover:text-white transition-all duration-200">
+                    <div class="w-8 h-8 rounded-full bg-[#25D366]/10 text-[#25D366] flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.949h.004c4.368 0 7.926-3.558 7.93-7.93a7.897 7.897 0 0 0-2.333-5.593l.002-.005zm-5.605 11.977c-1.166 0-2.309-.313-3.31-.906l-.237-.14-2.46.64.653-2.399-.153-.243a6.575 6.575 0 0 1-1.006-3.504c.004-3.597 2.934-6.527 6.537-6.527a6.545 6.545 0 0 1 4.628 1.916 6.547 6.547 0 0 1 1.921 4.629c-.004 3.598-2.934 6.528-6.539 6.528zM11.58 9.772c-.195-.097-1.15-.567-1.327-.63-.177-.063-.307-.095-.437.097-.13.195-.502.63-.614.757-.113.127-.225.143-.42.046-.195-.097-.822-.303-1.566-.967-.579-.516-.97-1.155-1.084-1.35-.114-.195-.012-.3-.11-.397-.087-.088-.195-.225-.293-.34-.097-.113-.13-.195-.195-.329-.066-.135-.033-.254-.017-.35.016-.097.13-.307.195-.42.065-.113.088-.195.13-.329.043-.135.022-.254-.01-.35-.033-.097-.13-.195-.195-.35-.13-.314-.29-.714-.396-.92-.105-.208-.225-.258-.337-.263-.105-.005-.225-.006-.345-.006a.65.65 0 0 0-.472.22c-.163.177-.62 0 .607-1.5 1.5 0 3.097 2.13 3.097a5.5 5.5 0 0 0 .524.234c.48.23 1.048.244 1.53.21.522-.037 1.053-.224 1.428-.515.375-.29.62-.647.62-1.077c.127-.063.262-.224.283-.43l-.004-.002z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold leading-none">WhatsApp Chat</p>
+                        <span class="text-[10px] text-[#25D366]">Replies in minutes</span>
+                    </div>
+                </a>
+
+                <!-- VIBER -->
+                <a href="#" class="viber-btn flex items-center space-x-3 p-2.5 rounded-lg bg-white/5 hover:bg-[#7360F2]/10 border border-white/5 hover:border-[#7360F2]/20 text-gray-300 hover:text-white transition-all duration-200">
+                    <div class="w-8 h-8 rounded-full bg-[#7360F2]/10 text-[#7360F2] flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.34 16.5c-.88-.41-2.14-1.06-2.58-1.53a1.59 1.59 0 0 0-1.87-.27c-.42.22-.84.44-1.26.66a9.55 9.55 0 0 1-4.75-4.75c.22-.42.44-.84.66-1.26a1.59 1.59 0 0 0-.27-1.87c-.47-.44-1.12-1.7-1.53-2.58a1.56 1.56 0 0 0-2-.88 6.94 6.94 0 0 0-4.06 4.06c-.84 3.73.54 8.5 4.3 12.26s8.53 5.14 12.26 4.3a6.94 6.94 0 0 0 4.06-4.06 1.56 1.56 0 0 0-.88-2zM12 2a1 1 0 0 1 1 1 7 7 0 0 1 7 7 1 1 0 0 1-2 0 5 5 0 0 0-5-5 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1 1 3 3 0 0 1 3 3 1 1 0 0 1-2 0 1 1 0 0 0-1-1 1 1 0 0 1-1-1z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold leading-none">Viber Support</p>
+                        <span class="text-[10px] text-[#7360F2]">Instant message</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sticky Main Circular Pulse FAB -->
+        <button id="cta-fab" class="w-14 h-14 bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full flex items-center justify-center text-white focus:outline-none hover:scale-105 transition-all duration-300 fab-shadow pulse-cyan" aria-label="Quick contact menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- CENTRALIZED PORTFOLIO CONFIGURATION BLOCK -->
+    <script>
+        window.PORTFOLIO_CONFIG = {
+            // Replace with your real contact details:
+            phone: "+38761123456",            // Bosnian format example (+387 61 123 456)
+            email: "almir.kadric@example.com", // Your email
+            whatsappNumber: "38761123456",    // Country code prefix without '+' or '00'
+            viberNumber: "38761123456",       // Viber dynamic chat number
+            
+            // Your social links
+            socials: {
+                linkedin: "https://linkedin.com/in/yourprofile",
+                github: "https://github.com/KadricAl",
+                youtube: "https://youtube.com/@yourchannel",
+                instagram: "https://instagram.com/yourprofile"
+            }
+        };
+    </script>
     <script src="script/script.js"></script>
 </body>
 </html>

@@ -3,115 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almir Portfolio Website</title>
+    <title>Almir | Project Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            viber: '#7360F2',
+                            whatsapp: '#25D366',
+                            dark: '#0B0F19',
+                            darker: '#070A10',
+                            accent: '#06B6D4',
+                            accentHover: '#0891b2',
+                            card: 'rgba(15, 23, 42, 0.45)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="style/style.css">
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-[#0B0F19] text-gray-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
 
-    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Almir Portfolio</h1>
+    <!-- HEADER / NAVIGATION -->
+    <header class="glass-nav fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tight text-white font-display">
+                <a href="index.html">Almir<span class="text-cyan-400">.</span><span class="text-xs text-gray-500 font-mono font-normal ml-1 font-sans">ARCHIVE</span></a>
+            </h1>
             <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="nav-link text-lg hover:text-cyan-400 transition duration-300">About</a>
-                <a href="#programming" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Programming</a>
-                <a href="#design" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Design</a>
-                <a href="#content" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Content Creation</a>
-                <a href="#projects" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Projects</a>
-                <a href="#services" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Services</a>
-                <a href="#contact" class="nav-link text-lg hover:text-cyan-400 transition duration-300">Contact</a>
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-wider font-semibold">About</a>
+                <a href="index.html#programming" class="nav-link text-sm uppercase tracking-wider font-semibold">Programming</a>
+                <a href="index.html#design" class="nav-link text-sm uppercase tracking-wider font-semibold">Design</a>
+                <a href="index.html#content" class="nav-link text-sm uppercase tracking-wider font-semibold">Content</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-wider font-semibold">Projects</a>
+                <a href="index.html#services" class="nav-link text-sm uppercase tracking-wider font-semibold">Services</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-wider font-semibold">Contact</a>
             </nav>
-            <button id="menu-btn" class="md:hidden block text-white">
+            <button id="menu-btn" class="md:hidden block text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none" aria-label="Toggle Menu">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
-            <a href="#programming" class="block py-2 px-4 text-sm hover:bg-gray-700">Programming</a>
-            <a href="#design" class="block py-2 px-4 text-sm hover:bg-gray-700">Design</a>
-            <a href="#content" class="block py-2 px-4 text-sm hover:bg-gray-700">Content Creation</a>
-            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
-            <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-700">Services</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
+        <!-- MOBILE NAVIGATION -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#070A10]/95 border-b border-white/5 backdrop-blur-lg">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html#about" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+                <a href="index.html#programming" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Programming</a>
+                <a href="index.html#design" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Design</a>
+                <a href="index.html#content" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Content Creation</a>
+                <a href="index.html#projects" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="index.html#services" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Services</a>
+                <a href="index.html#contact" class="block py-2 text-base text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
         </div>
     </header>
 
     <main class="pt-24 pb-16">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-6 max-w-6xl">
             
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
+            <!-- HEADER ARCHIVE -->
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 pb-6 border-b border-white/5 gap-6">
                 <div>
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">My Project Archive</h1>
-                    <p class="text-gray-400">A detailed look at my software development journey.</p>
+                    <div class="inline-flex items-center space-x-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                        <span>Project Database</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-2 font-display">My Project Archive</h1>
+                    <p class="text-gray-400 text-lg">A detailed look at my software development journey and code designs.</p>
                 </div>
-                <div class="mt-6 md:mt-0">
-                    <a href="index.html" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition duration-300 font-semibold group">
-                        <span class="mr-2 transform group-hover:-translate-x-1 transition-transform">←</span>
-                        Back to Home
+                <div>
+                    <a href="index.html" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-bold group transition duration-300">
+                        <span class="transform group-hover:-translate-x-2 transition-transform duration-300 mr-2">←</span>
+                        <span>Back to Home</span>
                     </a>
                 </div>
             </div>
 
+            <!-- PROJECTS TIMELINE LIST -->
             <div class="space-y-12">
                 
-                <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl border border-gray-700 flex flex-col md:flex-row transition-all duration-300 hover:border-cyan-500/50">
-                    <div class="md:w-1/3 bg-gray-900/50 p-6 flex justify-center items-center">
-                        <img src="images/Project-1-Full.jpg" alt="Project 1" class="w-full max-w-[280px] h-48 object-cover rounded-lg shadow-lg">
+                <!-- PROJECT 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/5 hover:border-cyan-500/30 transition-all duration-300 group">
+                    <div class="lg:w-1/3 bg-slate-950/40 p-8 flex justify-center items-center overflow-hidden border-b lg:border-b-0 lg:border-r border-white/5">
+                        <img src="images/Project-1-Full.jpg" alt="Django POS Device management App" class="w-full max-w-[280px] h-48 object-cover rounded-xl shadow-lg group-hover:scale-103 transition-transform duration-500">
                     </div>
-                    <div class="md:w-2/3 p-8 flex flex-col">
+                    <div class="lg:w-2/3 p-8 flex flex-col">
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Django</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Python</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">MySQL</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Tailwind CSS</span>
                         </div>
-                        <h3 class="text-3xl font-bold mb-4 text-white">Full-Stack Django App</h3>
-                        <p class="text-gray-300 leading-relaxed mb-6">
+                        <h3 class="text-3xl font-bold mb-4 text-white font-display group-hover:text-cyan-300 transition-colors">Full-Stack Django App</h3>
+                        <p class="text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
                             A full-stack Django web application for managing POS devices, services, and client interactions. The system supports role-based logins (Client and Technician), 
                             device installation tracking, yearly maintenance reminders, service requests, and shop management. 
                             It features responsive frontend styling using Tailwind CSS and supports PDF generation, email notifications, and clean dashboards for both clients and technicians.
                         </p>
                         <div class="mt-auto">
                             <a href="https://github.com/KadricAl/Django-Full-V1" target="_blank" rel="noopener noreferrer" 
-                               class="w-full md:w-2/3 lg:w-1/2 block text-center bg-cyan-500 text-white px-6 py-3 rounded-lg hover:bg-cyan-600 transition duration-300">
-                                View on GitHub
+                               class="w-full sm:w-auto inline-flex items-center justify-center bg-slate-950 hover:bg-slate-900 border border-white/10 hover:border-cyan-500/30 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                <span>View Repository</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl border border-gray-700 flex flex-col md:flex-row transition-all duration-300 hover:border-cyan-500/50">
-                    <div class="md:w-1/3 bg-gray-900/50 p-6 flex justify-center items-center">
-                        <img src="images/Project-2.jpg" alt="Project 2" class="w-full max-w-[280px] h-48 object-cover rounded-lg shadow-lg">
+                <!-- PROJECT 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/5 hover:border-cyan-500/30 transition-all duration-300 group">
+                    <div class="lg:w-1/3 bg-slate-950/40 p-8 flex justify-center items-center overflow-hidden border-b lg:border-b-0 lg:border-r border-white/5">
+                        <img src="images/Project-2.jpg" alt="Django POS installation admin" class="w-full max-w-[280px] h-48 object-cover rounded-xl shadow-lg group-hover:scale-103 transition-transform duration-500">
                     </div>
-                    <div class="md:w-2/3 p-8 flex flex-col">
+                    <div class="lg:w-2/3 p-8 flex flex-col">
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Python</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Django REST</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">SQLite</span>
-                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">TTailwind CSS</span>
+                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Tailwind CSS</span>
                         </div>
-                        <h3 class="text-3xl font-bold mb-4 text-white">Full-Stack Django App Lite</h3>
-                        <p class="text-gray-300 leading-relaxed mb-6">
-                            A full-stack web application for managing POS device installations. The frontend is built with React using Material UI and Axios, featuring:
-                            🔐 Role-based login, 🖥 Installed device dashboard, 🛠 Service management, and 🔌 REST API integration powered by a Django backend.
+                        <h3 class="text-3xl font-bold mb-4 text-white font-display group-hover:text-cyan-300 transition-colors">Full-Stack Django App Lite</h3>
+                        <p class="text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
+                            A full-stack web application for managing POS device installations. The frontend is built with React using Material UI and Axios, featuring: role-based login, service trackers, device statuses, and REST API systems powered by an optimized Django backend.
                         </p>
                         <div class="mt-auto">
                             <a href="https://github.com/KadricAl/Django-Full-Lite" target="_blank" rel="noopener noreferrer" 
-                               class="w-full md:w-2/3 lg:w-1/2 block text-center bg-cyan-500 text-white px-6 py-3 rounded-lg hover:bg-cyan-600 transition duration-300">
-                                View on GitHub
+                               class="w-full sm:w-auto inline-flex items-center justify-center bg-slate-950 hover:bg-slate-900 border border-white/10 hover:border-cyan-500/30 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                <span>View Repository</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl border border-gray-700 flex flex-col md:flex-row transition-all duration-300 hover:border-cyan-500/50">
-                    <div class="md:w-1/3 bg-gray-900/50 p-6 flex justify-center items-center">
-                        <img src="images/Project-3-Full.jpg" alt="Project 3" class="w-full max-w-[280px] h-48 object-cover rounded-lg shadow-lg">
+                <!-- PROJECT 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/5 hover:border-cyan-500/30 transition-all duration-300 group">
+                    <div class="lg:w-1/3 bg-slate-950/40 p-8 flex justify-center items-center overflow-hidden border-b lg:border-b-0 lg:border-r border-white/5">
+                        <img src="images/Project-3-Full.jpg" alt="Django React inventory app interface" class="w-full max-w-[280px] h-48 object-cover rounded-xl shadow-lg group-hover:scale-103 transition-transform duration-500">
                     </div>
-                    <div class="md:w-2/3 p-8 flex flex-col">
+                    <div class="lg:w-2/3 p-8 flex flex-col">
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">React</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Django</span>
@@ -119,44 +157,43 @@
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Tailwind CSS</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">SQLite</span>
                         </div>
-                        <h3 class="text-3xl font-bold mb-4 text-white">Django - React App</h3>
-                        <p class="text-gray-300 leading-relaxed mb-6">
-                            A full-stack web application built with Django and React for managing POS device installations. 
-                            Technicians and clients can add, edit, and track devices, log services, and filter inventories with a built-in search feature. 
-                            Perfect for businesses maintaining large device inventories and scheduled services.
+                        <h3 class="text-3xl font-bold mb-4 text-white font-display group-hover:text-cyan-300 transition-colors">Django - React App</h3>
+                        <p class="text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
+                            A full-stack web application built with Django and React for managing POS device installations. Technicians and clients can add, edit, and track devices, log services, and filter inventories with a built-in search feature. Perfect for businesses maintaining large device inventories and scheduled services.
                         </p>
                         <div class="mt-auto">
                             <a href="https://github.com/KadricAl/Django-React-DeviceApp" target="_blank" rel="noopener noreferrer" 
-                               class="w-full md:w-2/3 lg:w-1/2 block text-center bg-cyan-500 text-white px-6 py-3 rounded-lg hover:bg-cyan-600 transition duration-300">
-                                View on GitHub
+                               class="w-full sm:w-auto inline-flex items-center justify-center bg-slate-950 hover:bg-slate-900 border border-white/10 hover:border-cyan-500/30 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                <span>View Repository</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl border border-gray-700 flex flex-col md:flex-row transition-all duration-300 hover:border-cyan-500/50">
-                    <div class="md:w-1/3 bg-gray-900/50 p-6 flex justify-center items-center">
-                        <img src="images/Project-4.jpg" alt="Project 2" class="w-full max-w-[280px] h-48 object-cover rounded-lg shadow-lg">
+                <!-- PROJECT 4 -->
+                <div class="glass-card rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/5 hover:border-cyan-500/30 transition-all duration-300 group">
+                    <div class="lg:w-1/3 bg-slate-950/40 p-8 flex justify-center items-center overflow-hidden border-b lg:border-b-0 lg:border-r border-white/5">
+                        <img src="images/Project-4.jpg" alt="React App Full inventory admin CRUD" class="w-full max-w-[280px] h-48 object-cover rounded-xl shadow-lg group-hover:scale-103 transition-transform duration-500">
                     </div>
-                    <div class="md:w-2/3 p-8 flex flex-col">
+                    <div class="lg:w-2/3 p-8 flex flex-col">
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">JS</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">React JS</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Node JS</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Express JS</span>
                             <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Tailwind CSS</span>
-                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">Mongo DB</span>
+                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-medium">MongoDB</span>
                         </div>
-                        <h3 class="text-3xl font-bold mb-4 text-white">React App Full</h3>
-                        <p class="text-gray-300 leading-relaxed mb-6">
-                            A full-stack web application built with React and Node.js that allows users to manage devices through a clean and responsive interface. 
-                            The app supports full CRUD operations, including adding, editing, deleting, and viewing detailed device information with image previews. 
-                            It uses MongoDB for data storage and Material UI with Tailwind CSS for a modern and user-friendly design.
+                        <h3 class="text-3xl font-bold mb-4 text-white font-display group-hover:text-cyan-300 transition-colors">React App Full</h3>
+                        <p class="text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
+                            A full-stack web application built with React and Node.js that allows users to manage devices through a clean and responsive interface. The app supports full CRUD operations, including adding, editing, deleting, and viewing detailed device information with image previews. It uses MongoDB for data storage and Material UI with Tailwind CSS for a modern and user-friendly design.
                         </p>
                         <div class="mt-auto">
                             <a href="https://github.com/KadricAl/Device-React-App" target="_blank" rel="noopener noreferrer" 
-                               class="w-full md:w-2/3 lg:w-1/2 block text-center bg-cyan-500 text-white px-6 py-3 rounded-lg hover:bg-cyan-600 transition duration-300">
-                                View on GitHub
+                               class="w-full sm:w-auto inline-flex items-center justify-center bg-slate-950 hover:bg-slate-900 border border-white/10 hover:border-cyan-500/30 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                <span>View Repository</span>
                             </a>
                         </div>
                     </div>
@@ -166,19 +203,93 @@
         </div>
     </main>
 
-
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
-                <a href="https://github.com/KadricAl" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">YouTube</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
+    <!-- FOOTER -->
+    <footer class="bg-[#070A10] border-t border-white/5 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="linkedin-btn text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/KadricAl" class="github-btn text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="#" class="youtube-btn text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="#" class="instagram-btn text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
-            <p class="text-gray-500">&copy; 2024 MyPortfolio. All Rights Reserved.</p>
+            <p class="text-gray-500 text-xs sm:text-sm font-medium tracking-wide">&copy; 2024 MyPortfolio. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- STICKY FLOATING QUICK CTA WIDGET -->
+    <div id="cta-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Expanded Quick Communication Card -->
+        <div id="cta-menu" class="hidden glass-card rounded-2xl p-4 mb-4 w-64 shadow-2xl fab-expanded-shadow border border-white/10 transition-all duration-300 transform translate-y-2 opacity-0">
+            <div class="flex justify-between items-center mb-3 pb-2 border-b border-white/5">
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Quick Connect</span>
+                <button id="cta-close" class="text-gray-400 hover:text-white transition-colors" aria-label="Close widget">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></button>
+            </div>
+            
+            <div class="space-y-2">
+                <!-- CALL ME -->
+                <a href="#" class="call-btn flex items-center space-x-3 p-2.5 rounded-lg bg-white/5 hover:bg-cyan-500/10 border border-white/5 hover:border-cyan-500/20 text-gray-300 hover:text-white transition-all duration-200">
+                    <div class="w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold leading-none">Call Direct</p>
+                        <span class="text-[10px] text-gray-500">Available 8 AM - 6 PM</span>
+                    </div>
+                </a>
+
+                <!-- WHATSAPP -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn flex items-center space-x-3 p-2.5 rounded-lg bg-white/5 hover:bg-[#25D366]/10 border border-white/5 hover:border-[#25D366]/20 text-gray-300 hover:text-white transition-all duration-200">
+                    <div class="w-8 h-8 rounded-full bg-[#25D366]/10 text-[#25D366] flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.949h.004c4.368 0 7.926-3.558 7.93-7.93a7.897 7.897 0 0 0-2.333-5.593l.002-.005zm-5.605 11.977c-1.166 0-2.309-.313-3.31-.906l-.237-.14-2.46.64.653-2.399-.153-.243a6.575 6.575 0 0 1-1.006-3.504c.004-3.597 2.934-6.527 6.537-6.527a6.545 6.545 0 0 1 4.628 1.916 6.547 6.547 0 0 1 1.921 4.629c-.004 3.598-2.934 6.528-6.539 6.528zM11.58 9.772c-.195-.097-1.15-.567-1.327-.63-.177-.063-.307-.095-.437.097-.13.195-.502.63-.614.757-.113.127-.225.143-.42.046-.195-.097-.822-.303-1.566-.967-.579-.516-.97-1.155-1.084-1.35-.114-.195-.012-.3-.11-.397-.087-.088-.195-.225-.293-.34-.097-.113-.13-.195-.195-.329-.066-.135-.033-.254-.017-.35.016-.097.13-.307.195-.42.065-.113.088-.195.13-.329.043-.135.022-.254-.01-.35-.033-.097-.13-.195-.195-.35-.13-.314-.29-.714-.396-.92-.105-.208-.225-.258-.337-.263-.105-.005-.225-.006-.345-.006a.65.65 0 0 0-.472.22c-.163.177-.62 0 .607-1.5 1.5 0 3.097 2.13 3.097a5.5 5.5 0 0 0 .524.234c.48.23 1.048.244 1.53.21.522-.037 1.053-.224 1.428-.515.375-.29.62-.647.62-1.077c.127-.063.262-.224.283-.43l-.004-.002z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold leading-none">WhatsApp Chat</p>
+                        <span class="text-[10px] text-[#25D366]">Replies in minutes</span>
+                    </div>
+                </a>
+
+                <!-- VIBER -->
+                <a href="#" class="viber-btn flex items-center space-x-3 p-2.5 rounded-lg bg-white/5 hover:bg-[#7360F2]/10 border border-white/5 hover:border-[#7360F2]/20 text-gray-300 hover:text-white transition-all duration-200">
+                    <div class="w-8 h-8 rounded-full bg-[#7360F2]/10 text-[#7360F2] flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.34 16.5c-.88-.41-2.14-1.06-2.58-1.53a1.59 1.59 0 0 0-1.87-.27c-.42.22-.84.44-1.26.66a9.55 9.55 0 0 1-4.75-4.75c.22-.42.44-.84.66-1.26a1.59 1.59 0 0 0-.27-1.87c-.47-.44-1.12-1.7-1.53-2.58a1.56 1.56 0 0 0-2-.88 6.94 6.94 0 0 0-4.06 4.06c-.84 3.73.54 8.5 4.3 12.26s8.53 5.14 12.26 4.3a6.94 6.94 0 0 0 4.06-4.06 1.56 1.56 0 0 0-.88-2zM12 2a1 1 0 0 1 1 1 7 7 0 0 1 7 7 1 1 0 0 1-2 0 5 5 0 0 0-5-5 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1 1 3 3 0 0 1 3 3 1 1 0 0 1-2 0 1 1 0 0 0-1-1 1 1 0 0 1-1-1z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold leading-none">Viber Support</p>
+                        <span class="text-[10px] text-[#7360F2]">Instant message</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sticky Main Circular Pulse FAB -->
+        <button id="cta-fab" class="w-14 h-14 bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full flex items-center justify-center text-white focus:outline-none hover:scale-105 transition-all duration-300 fab-shadow pulse-cyan" aria-label="Quick contact menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- CENTRALIZED PORTFOLIO CONFIGURATION BLOCK -->
+    <script>
+        window.PORTFOLIO_CONFIG = {
+            // Replace with your real contact details:
+            phone: "+38761123456",            // Bosnian format example (+387 61 123 456)
+            email: "almir.kadric@example.com", // Your email
+            whatsappNumber: "38761123456",    // Country code prefix without '+' or '00'
+            viberNumber: "38761123456",       // Viber dynamic chat number
+            
+            // Your socials
+            socials: {
+                linkedin: "https://linkedin.com/in/yourprofile",
+                github: "https://github.com/KadricAl",
+                youtube: "https://youtube.com/@yourchannel",
+                instagram: "https://instagram.com/yourprofile"
+            }
+        };
+    </script>
     <script src="script/script.js"></script>
 </body>
 </html>
