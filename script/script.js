@@ -4,10 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. DYNAMIC CONTACT CONFIGURATION RESOLVER
     // ==========================================
     const config = window.PORTFOLIO_CONFIG || {
-        phone: "+38761123456",
+        phone: "+38761293073",
         email: "almir.kadric@example.com",
-        whatsappNumber: "38761123456",
-        viberNumber: "38761123456",
+        whatsappNumber: "38761293073",
+        viberNumber: "38761293073",
+        web3formsKey: "1f4c4080-bce9-44e0-8153-4a5171bfe720",
         socials: {
             linkedin: "#",
             github: "https://github.com/KadricAl",
@@ -192,9 +193,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const result = document.getElementById('form-result');
 
     if (form && result) {
+        // Sync access_key from PORTFOLIO_CONFIG if provided
+        const keyInput = form.querySelector('input[name="access_key"]');
+        if (keyInput && config.web3formsKey) {
+            keyInput.value = config.web3formsKey;
+        }
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Botcheck Honeypot protection
+            const botcheck = form.querySelector('input[name="botcheck"]');
+            if (botcheck && botcheck.checked) {
+                return;
+            }
+
             const formData = new FormData(form);
+            // Ensure access key from config is used if form input is placeholder
+            if (config.web3formsKey && (!formData.get('access_key') || formData.get('access_key') === 'YOUR_WEB3FORMS_ACCESS_KEY')) {
+                formData.set('access_key', config.web3formsKey);
+            }
+
             const object = Object.fromEntries(formData);
             const json = JSON.stringify(object);
 
@@ -219,14 +238,14 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(async (response) => {
                 let jsonResponse = await response.json();
-                if (response.status === 200) {
+                if (response.status === 200 && jsonResponse.success !== false) {
                     // Glass Success alert with custom checkmark icon
                     result.innerHTML = `
                         <div class="flex items-center justify-center space-x-2.5 text-green-400 bg-green-500/10 border border-green-500/25 py-3.5 px-4 rounded-xl shadow-lg">
                             <svg class="w-5.5 h-5.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span>Message dispatched successfully!</span>
+                            <span>${jsonResponse.message || 'Message dispatched successfully!'}</span>
                         </div>
                     `;
                     form.reset();
@@ -238,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <svg class="w-5.5 h-5.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                             </svg>
-                            <span>Transmission error: ${jsonResponse.message}</span>
+                            <span>Transmission error: ${jsonResponse.message || 'Verification failed. Please check your Web3Forms access key.'}</span>
                         </div>
                     `;
                 }
